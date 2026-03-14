@@ -1,0 +1,201 @@
+/* --- GLOBAL RESET & FONT (Shared with Home.css) --- */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* --- MAIN CONTENT AREA --- */
+.review-main-content {
+  flex: 1;
+  z-index: 10;
+  padding: 140px 60px 60px; /* Increased top padding for the fixed navbar */
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* --- HERO HEADER --- */
+.page-hero-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  color: #cbd5e1;
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+/* --- THE GRID: SPACING & PANEL SIZE --- */
+.review-grid {
+  display: grid;
+  /* minmax(320px) ensures they stay wide/rectangular and don't get too thin */
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+  /* Large 50px gap creates the distinct separation from your reference image */
+  gap: 50px; 
+  padding: 20px 0;
+  width: 100%;
+}
+
+/* --- INDIVIDUAL GLASS PANEL --- */
+.glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px; /* Smooth rounded corners from your screenshot */
+  padding: 24px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  
+  /* FIXED HEIGHT: This forces the rectangular look from your image */
+  height: 160px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Keeps title at top and button at bottom */
+  cursor: pointer;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* --- CARD CONTENT --- */
+.glass-card h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.glass-card p {
+  /* Muted color for "Created in Creator Studio" text */
+  color: rgba(255, 255, 255, 0.4); 
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* --- CARD FOOTER (Button & Author) --- */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.author-tag {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #3b82f6; /* Bright blue for "BY ADMIN" */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.approve-action-btn {
+  background: #22c55e; /* Vibrant green from your screenshot */
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 16px; /* Pill shape */
+  font-weight: 800;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.approve-action-btn:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* --- EMPTY STATE --- */
+.empty-state-glass {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 80px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 30px;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-up {
+  animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+/* --- LEAD USER CARD VARIANT --- */
+/* Distinct amber accent so the lead user instantly recognises their queue */
+.glass-card.lead-card {
+  border-color: rgba(251, 191, 36, 0.3);
+  background: rgba(251, 191, 36, 0.04);
+}
+
+.glass-card.lead-card:hover {
+  border-color: rgba(251, 191, 36, 0.55);
+  background: rgba(251, 191, 36, 0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(251, 191, 36, 0.1);
+}
+
+/* Lead's "Review & Edit" button */
+.review-action-btn.lead-review-btn {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  color: #1a1a1a;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 16px;
+  font-weight: 800;
+  font-size: 0.85rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(251, 191, 36, 0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+  white-space: nowrap;
+}
+
+.review-action-btn.lead-review-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(251, 191, 36, 0.55);
+}
+
+/* Subtle amber left-border stripe on lead cards */
+.glass-card.lead-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 16px; bottom: 16px;
+  width: 3px;
+  background: linear-gradient(180deg, #fbbf24, #f59e0b);
+  border-radius: 0 2px 2px 0;
+}
+
+/* Required for the ::before stripe to show */
+.glass-card { position: relative; overflow: hidden; }

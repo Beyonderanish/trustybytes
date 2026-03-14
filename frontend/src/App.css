@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-blue: #2563eb;
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --text-white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* --- MAIN CONTAINER --- */
+.login-page-container {
+  height: 100vh;
+  width: 100vw;
+  background: #000; 
+  position: relative;
+  overflow: hidden; 
+}
+
+/* --- VIDEO BACKGROUND --- */
+.video-background-wrapper {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+}
+
+.background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+  z-index: 1;
+}
+
+/* --- LOGIN CONTENT (Centered Fix) --- */
+.login-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center; /* Vertical centering */
+  justify-content: center; /* Horizontal centering */
+}
+
+/* --- GLASS CARD (Fixed Height/Layout) --- */
+.glass-card {
+  background: var(--glass-bg); 
+  backdrop-filter: blur(25px); 
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid var(--glass-border);
+  padding: 50px 40px;
+  border-radius: 32px;
+  width: 440px;
+  height: auto; /* Ensures the card wraps all its content */
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.5px;
+}
+
+.blue-text-logo { color: var(--primary-blue); }
+
+.glass-card h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.glass-card p.subtitle {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 35px;
+  line-height: 1.5;
+}
+
+/* --- FORM STYLES --- */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.modern-input {
+  width: 100%;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.modern-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.modern-input:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 15px rgba(37, 99, 235, 0.2);
+}
+
+/* --- OPTIONS ROW --- */
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0 15px 0;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.remember-me { display: flex; align-items: center; gap: 10px; cursor: pointer; }
+.forgot-pass { color: white; cursor: pointer; font-weight: 500; }
+.forgot-pass:hover { text-decoration: underline; }
+
+/* --- LOGIN BUTTON --- */
+.primary-login-btn {
+  width: 100%;
+  padding: 16px;
+  background: var(--primary-blue);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primary-login-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .glass-card { width: 90%; padding: 40px 25px; }
+  .glass-card h2 { font-size: 1.7rem; }
+}

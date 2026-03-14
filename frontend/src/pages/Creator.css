@@ -1,0 +1,148 @@
+/* --- ROOT & HIGH-CONTRAST NEON THEME --- */
+.zen-editor-root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #000000; /* Deepest black for max contrast */
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow: hidden;
+}
+
+/* --- BRIGHT GLASS HEADER --- */
+.zen-header {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  background: rgba(255, 255, 255, 0.03); /* Subtle glass shine */
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* Brighter border */
+  z-index: 100;
+}
+
+.zen-header-left { display: flex; align-items: center; gap: 20px; }
+
+.zen-back-pill {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.zen-back-pill:hover { 
+  background: #ffffff; 
+  color: #000000;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); /* Glow effect */
+}
+
+.zen-divider { width: 1px; height: 20px; background: rgba(255, 255, 255, 0.3); }
+
+.zen-title-input {
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  outline: none;
+  color: #ffffff;
+  width: 400px;
+  letter-spacing: -0.5px;
+}
+
+/* --- VIBRANT SAVE BUTTON --- */
+.zen-save-btn {
+  background: #ffffff; 
+  color: #000000; 
+  border: none;
+  padding: 10px 28px;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  transition: 0.3s;
+}
+
+.zen-save-btn:hover { 
+  transform: translateY(-2px); 
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5); /* Intensive glow */
+}
+.upload-trigger {
+  margin-left: 12px;
+  border-color: #00ff88 !important; /* Neon green */
+  color: #00ff88 !important;
+}
+
+.upload-trigger:hover {
+  background: #00ff88 !important;
+  color: #000000 !important;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.4) !important;
+}
+
+/* --- BRIGHT WORKSPACE CANVAS --- */
+/* --- UPDATED WORKSPACE (The area surrounding the sheet) --- */
+.zen-workspace {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+  /* Shifted from pure black to a very bright, glowing white-blue tint */
+  background: #dcebfd; 
+  /* Added a subtle inner glow to make it feel "powered on" */
+}
+.zen-paper-scroller {
+  width: 100%;
+  max-width: 900px;
+  padding: 0 20px 100px;
+}
+
+.zen-paper-sheet {
+  background: #ffffff !important;
+  min-height: 29.7cm;
+  padding: 90px 110px; 
+  border-radius: 2px;
+  /* Brighter, white-toned shadow to make it pop */
+  box-shadow: 0 0 80px rgba(255, 255, 255, 0.08); 
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- BLOCKNOTE UI SHARPENING --- */
+.bn-container { 
+  padding: 0 !important; 
+}
+
+.bn-editor {
+  padding-inline: 0 !important;
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: #000000;
+}
+
+/* Make Slash Menu pop with contrast */
+.bn-side-menu, .bn-slash-menu {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+.bn-slash-menu-item[data-selected] {
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Entrance Animation */
+.fade-in { animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+@keyframes fadeIn { 
+  from { opacity: 0; transform: translateY(20px); } 
+  to { opacity: 1; transform: translateY(0); } 
+}
